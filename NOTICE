@@ -1,0 +1,14 @@
+MarketPrism (观澜)
+
+This project derives from TradingAgents. The upstream research workflow and
+retained source assets remain attributable to their original authors.
+The original Apache License, Version 2.0 is retained in LICENSE.
+
+MarketPrism modifications include Chinese A-share data integration,
+Chinese desktop presentation, self-hosted authentication and data services,
+server-side analysis, caching, and report management.
+
+Internal identifiers inherited from the local AITrade adaptation are retained
+for compatibility. The public-facing product name is MarketPrism.
+
+Third-party dependencies remain subject to their respective licenses.

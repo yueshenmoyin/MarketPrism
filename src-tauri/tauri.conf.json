@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MarketPrism",
+  "version": "0.1.0",
+  "identifier": "cn.aitrade.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://127.0.0.1:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "观澜 MarketPrism",
+        "width": 1280,
+        "height": 860,
+        "minWidth": 1120,
+        "minHeight": 760,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "nsis",
+    "category": "Finance",
+    "icon": ["icons/icon.ico"],
+    "shortDescription": "MarketPrism AI stock research workspace",
+    "longDescription": "MarketPrism is an AI stock research desktop workspace with multi-agent analysis, Chinese reports, configurable models, and self-hosted services.",
+    "windows": {
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico",
+        "installerHooks": "windows/hooks.nsh"
+      }
+    }
+  }
+}

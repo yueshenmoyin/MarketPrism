@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aitrade-a-share"
+version = "0.2.5"
+description = "MarketPrism: AI-powered A-share stock research workspace"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain-core>=0.3.81",
+    "backtrader>=1.9.78.123",
+    "akshare>=1.16.0",
+    "adata>=2.9.0",
+    "baostock>=0.8.9",
+    "fastapi>=0.115.0",
+    "finshare>=2.1.0",
+    "langchain-anthropic>=0.3.15",
+    "langchain-experimental>=0.3.4",
+    "langchain-google-genai>=4.0.0",
+    "langchain-openai>=0.3.23",
+    "langgraph>=0.4.8",
+    "langgraph-checkpoint-sqlite>=2.0.0",
+    "pandas>=2.3.0",
+    "parsel>=1.10.0",
+    "pytz>=2025.2",
+    "questionary>=2.1.0",
+    "redis>=6.2.0",
+    "requests>=2.32.4",
+    "rich>=14.0.0",
+    "typer>=0.21.0",
+    "setuptools>=80.9.0",
+    "stockstats>=0.6.5",
+    "tqdm>=4.67.1",
+    "tushare>=1.4.0",
+    "typing-extensions>=4.14.0",
+    "uvicorn>=0.34.0",
+    "yfinance>=0.2.63",
+]
+
+[project.scripts]
+aitrade = "cli.main:app"
+aitrade-desktop-api = "aitrade.desktop.api:main"
+aitrade-auth-api = "aitrade.server.auth_api:main"
+
+[tool.setuptools.packages.find]
+include = ["aitrade*", "cli*"]
+
+[tool.setuptools.package-data]
+cli = ["static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "unit: fast isolated unit tests",
+    "integration: tests requiring external services",
+    "smoke: quick sanity-check tests",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
